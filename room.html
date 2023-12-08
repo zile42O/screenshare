@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<head>
+	<title>Web ShareScreen</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<link href="https://use.fontawesome.com/releases/v6.2.0/css/all.css" rel="stylesheet">
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Buttons/2.0.0/css/buttons.min.css" integrity="sha512-x8eU2Yx8Pd8XjWOTv+S/2jXGe586o6Ow722EaqGwG+4hkWaW1ZSAIMYUAY5QDyMglc9fPT0E1kZRIBwsdggtqg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Buttons/2.0.0/js/buttons.js" integrity="sha512-V1Dio0eEZqyHadQoQ4RuzqgbigOZFxjqnAS2fqaCUKSBXwGxe7BEFO36atwkA6cz5KbnR4oO/yLLI2wyCdKf7g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/peerjs/1.5.2/peerjs.js"></script>
+	<script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+</head>
+<style>
+	@import "https://fonts.googleapis.com/css2?family=Inter&display=swap";
+	* {
+		box-sizing:border-box
+	}
+	body {
+		font-family:system-ui,-apple-system,BlinkMacSystemFont;
+		line-height:1;
+		padding:0;
+		margin:auto;
+		padding-left:3rem;
+		padding-right:3rem;
+		background-color: #121212;        
+		text-align:left;
+		color:#fff;
+		display:flex;
+		align-items:center;
+		justify-content:center;
+		flex-flow:column nowrap;
+		gap:1rem
+	}
+	video {
+		background: #222;
+		--width: 100%;
+		width: var(--width);
+		height: calc(var(--width) * 0.75);
+	}
+</style>
+
+<body>
+	<center>
+		<div style="padding-bottom: 50%;">
+			<h1 id="roomLoading">Room loading...</h1>
+			<br><br><br><br>
+			<h2>Used Stack</h2>
+			<img src="https://img.shields.io/badge/-peerjs-informational?logo=peerjs&style=for-the-badge&logoColor=ffffff&color=231f20" style="max-width: 100%;">
+			<img src="https://img.shields.io/badge/-webrtc-informational?logo=webrtc&style=for-the-badge&logoColor=ffffff&color=231f20" style="max-width: 100%;">
+			<br><br><br><br><br><br><br><br><br><br>
+			<h4 id="viewerMsgStream">Waiting for stream..</h4>
+			<video id="video" autoplay playsinline muted></video>
+			<br><br>
+			<button style="display: none;" id="startShare" class="button button-caution button-circle button-giant"><i class="fa-solid fa-play"></i></button>
+			<button style="display: none;" id="getShare" onclick="getShareLink()" class="button button-royal button-circle button-giant"><i class="fa fa-share"></i></button>
+			<h4 id="viewerMsg">You are viewer you cannot start the screenshare.</h4>
+			<br><br><br>
+		</div>
+	</center>
+</body>
+<footer>
+	<center>
+		<h5>For educational purposes</h5>
+		<img style="cursor: pointer;" src="https://zile42o.dev/images/logo_transparent.png" onclick="window.location.href='https://github.com/zile42O'"  width="80">		
+	</center>
+</footer>
+<script src="main.js"></script>
+</html>
