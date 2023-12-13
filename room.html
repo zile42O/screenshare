@@ -44,13 +44,14 @@
 	<center>
 		<div style="padding-bottom: 50%;">
 			<h1 id="roomLoading">Room loading...</h1>
+			<h2 style="display: none; color: #23BB56" id="connectionInitialized">Connection Initialized</h2>
 			<br><br><br><br>
 			<h2>Used Stack</h2>
 			<img src="https://img.shields.io/badge/-peerjs-informational?logo=peerjs&style=for-the-badge&logoColor=ffffff&color=231f20" style="max-width: 100%;">
 			<img src="https://img.shields.io/badge/-webrtc-informational?logo=webrtc&style=for-the-badge&logoColor=ffffff&color=231f20" style="max-width: 100%;">
 			<br><br><br><br><br><br><br><br><br><br>
 			<h4 id="viewerMsgStream">Waiting for stream..</h4>
-			<video id="video" autoplay playsinline muted></video>
+			<video style="display: none;" id="video" autoplay playsinline muted></video>
 			<br><br>
 			<button style="display: none;" id="startShare" class="button button-caution button-circle button-giant"><i class="fa-solid fa-play"></i></button>
 			<button style="display: none;" id="getShare" onclick="getShareLink()" class="button button-royal button-circle button-giant"><i class="fa fa-share"></i></button>
