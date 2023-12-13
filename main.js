@@ -90,7 +90,9 @@ function initializePeer() {
 			alert('Connection lost, try again.');
 			location.reload(); //reload page.
 		}
-
+		if (error.message.includes('is taken')) {
+			alert('Someone watching this, try again or request new share link.');
+		}
 	});
 }
 
@@ -129,7 +131,7 @@ function handleSuccess(stream) {
 			screenVideo.style.display = "none";
 			startButton.disabled = false;
 			alert("Stream ended");
-			location.reload(); // fix show alert to viewer (sync)
+			location.reload(); // (sync)
 		});
 	});
 }
@@ -145,6 +147,7 @@ function handleIncomingCall(call) {
 		stream.getVideoTracks()[0].addEventListener('ended', () => {
 			alert("Stream ended by sharer.");
 			screenVideo.style.display = "none";
+			location.reload(); // (sync)
 		});
 	});
 	
